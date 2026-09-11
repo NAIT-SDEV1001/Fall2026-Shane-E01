@@ -92,11 +92,66 @@ print (2 ** 3) #8 - exponent
 print (9 % 4) #1 - Modulous
 
 #ask for 2 numbers, multiply them and display:
-# 5 * 6 = 30
+# # 5 * 6 = 30
 
-number_one = int(input("Enter number 1: "))
-number_two = int(input("Enter number 2: "))
+# number_one = int(input("Enter number 1: "))
+# number_two = int(input("Enter number 2: "))
 
-product = number_one * number_two
+# product = number_one * number_two
 
-print(f"{number_one} * {number_two} = {product}")
+# print(f"{number_one} * {number_two} = {product}")
+
+
+
+#get 2 numbers from the user and place in variables
+#print out the value that is in each variable:
+    #number1: 50
+    #number2: 80
+#swap the numbers so that the value that was in number1 is now in number2 and vice versa
+#print the value that is each variable after the swap
+    #number1: 80
+    #number2: 50
+
+# #get number1 from user
+# number1 = input("Enter number 1: ")
+# #get number2 from user
+# number2 = input("Enter number 2: ")
+# #print values in each variable
+# print(f"number1: {number1}")
+# print(f"number2: {number2}")
+# #swap the numbers
+# temp = number1
+# number1 = number2
+# number2 = temp
+# #print values in each variable
+# print(f"number1: {number1}")
+# print(f"number2: {number2}")
+
+#Formatting numbers
+total = 100.1234567
+
+print(round(total,2)) # round to 2 decimal places (currency)
+print(round(total,6))
+
+print(f"{total:.2f}") #format total to 2 decimal places
+print(f"{total:.6f}")
+
+price = 100
+print(f"{price:.2f}")
+
+# Math functions
+# import the math module which contains math functions and constants
+import math
+
+test_value = 5.245435
+print(math.ceil(test_value)) # round up to the next whole number
+print(math.floor(test_value)) # round down to the next whole number
+print(math.pow(2,3)) # exponent
+print(math.sqrt(9)) # square root
+print(math.pi) # constant containing pi
+
+
+print(max(1,5,3,77,5,73)) #maximum number
+print(min(1,5,3,77,5,73)) #minimum number
+
+
