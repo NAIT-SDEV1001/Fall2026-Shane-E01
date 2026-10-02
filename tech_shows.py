@@ -1,9 +1,24 @@
-tv_shows = ["Silicon Valley", "Halt and Catch Fire", "Blackberry", "The Billion Dollar Code", "Mr. Robot", "The IT Crowd", "WeCrashed", "The Social Network", "Severence", "Pirates of Silicon Valley" ]
+tech_shows = [
+    "Silicon Valley",
+    "Halt and Catch Fire",
+    "Blackberry",
+    "The Billion Dollar Code",
+    "Mr. Robot",
+    "The IT Crowd",
+    "WeCrashed",
+    "The Social Network",
+    "Severance",
+    "Pirates of Silicon Valley",
+]
 
-print (f"The first show is: {tv_shows[0]}")
-print (f"The last show is: {tv_shows[-1]}")
-# OR
-print (f"The last show is: {tv_shows[len(tv_shows)-1]}")
-tv_shows[6] = "The Dropout"
-tv_shows[7] = "Black Mirror"
-print(f"The 5th to ninth shows in the list are: {tv_shows[4:9]}")
+print(F"The best show is {tech_shows[0]}")
+print(F"The most classic show is {tech_shows[-1]}")
+
+tech_shows[6] = "The Dropout"
+tech_shows[7] = "Black Mirror"
+
+print("The fourth to ninth shows on the list are:")
+print(tech_shows[3:9])
+
+
+     
