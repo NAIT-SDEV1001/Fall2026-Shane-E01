@@ -1,52 +1,114 @@
-#Exception handling gives a way to gracefully handle errors and keep code executing
-#Try/except blocks
+#We want to trap exceptions. 
+#We can then print "Nice error messages" AND keep the program running
+#Trap exceptions gracefully
+#Use try/except
 
-sum = 0
-count= 0
-while True:
-    number = int(input("Enter a number: "))
-    if number == -1:
-        break
-    sum += number
-    count += 1
+# sum = 0
+# count = 0
 
-average = sum/count
-print(f"The average is: {average}")
+# while True:
+#     number = int(input("Enter a number: "))
+#     if number == -1:
+#         break
+#     sum += number
+#     count += 1
 
-#use try/except
+# average = sum/count
+# print(f"The average is: {average}")
+# #What exeptions could occur:
+# #User enters a string instead of number - ValueError
+# #divide by 0 - ZeroDivisionError
+
+# #rewrite without exception handling
+# #denominator of 0 is easy to handle but the ValueError is more difficult
+# sum = 0
+# count = 0
+# average = 0
+
+# while True:
+#     number = int(input("Enter a number: "))
+#     if number == -1:
+#         break
+#     sum += number
+#     count += 1
+# if count != 0:
+#     average = sum/count
+# print(f"The average is: {average}")
+
+#Use Try/Except
+# sum = 0
+# count = 0
+
+# while True:   
+#     try: 
+#         number = int(input("Enter a number: "))
+#     #catch any ValueErrors in the try block
+#     #the python error message will be in error_message (optional)
+#     except ValueError as error_message:
+#         print(f"Must be a number. Error message is: {error_message}")
+#         continue
+#     if number == -1:
+#         break
+#     sum += number
+#     count += 1
+# try:
+#     average = sum/count
+#     print(f"The average is: {average}")
+# except ZeroDivisionError:
+#     print("No numbers were entered.")
+
+#else
+# sum = 0
+# count = 0
+
+# while True:   
+#     try: 
+#         number = int(input("Enter a number: "))
+#     #catch any ValueErrors in the try block
+#     #the python error message will be in error_message (optional)
+#     except ValueError as error_message:
+#         print(f"Must be a number. Error message is: {error_message}")
+#         continue
+#     else:#executes if no exception occurs
+#         print("Number accepted")
+#     if number == -1:
+#         break
+#     sum += number
+#     count += 1
+# try:
+#     average = sum/count
+#     print(f"The average is: {average}")
+# except ZeroDivisionError:
+#     print("No numbers were entered.") 
+# finally:  #Executes if an exception occured or not. 
+#    print("Always executes")
+
+#Multiple exceptions from one try
+# try:
+#     number = int(input("Enter a number: "))
+#     result = 100/number
+# except ValueError:
+#     print("Must be a number")
+# except ZeroDivisionError:
+#     print("Number cannot be 0")
+# else:
+#     print(f"result is : {result}")    
+
+#Raise a custom exception
 sum = 0
 count = 0
-while True:
-    try:
-        number = int(input("Enter a number: "))
-    except ValueError as error_message:
-        print(f"Must be a number: {error_message}")
-        continue
-    if number == -1:
-        break
-    sum += number
-    count += 1
-try:
-    average = sum/count
-    print(f"The average is: {average}")
-except ZeroDivisionError as error_message:
-    print(f"No numbers were entered: {error_message}")
 
-#Raise Custom exceptions for our own rules
-#cannot be less than -1
-#else: 
-sum = 0
-count = 0
-while True:
-    try:
+while True:   
+    try: 
         number = int(input("Enter a number: "))
         if number < -1:
-            raise ValueError ("Negative numbers are not allowed, except -1 to quit")
+
+            raise ValueError ("Negative numbers not allowed, except -1")
     except ValueError as error_message:
-        print(f"Invalid input. Must be a number >= -1: {error_message}")
+        print("Invalid Input")
         continue
-    else: #optional
-        print("number accepted")
+    else:#executes if no exception occurs
+        print("Number accepted")
     if number == -1:
         break
     sum += number
@@ -54,18 +116,10 @@ while True:
 try:
     average = sum/count
     print(f"The average is: {average}")
-except ZeroDivisionError as error_message:
-    print(f"No numbers were entered: {error_message}")
-
-
-#check multiple exceptions of one try:
-try:
-    number = int(input("Enter a number: "))
-    result = 100/number
-except ValueError: #using the error_message is optional:
-    print("You must enter an integer")
 except ZeroDivisionError:
-    print("Cannot divide by 0. Number must be > 0")
-else:#no exceptions occured in the try 
-    print(f"The result is {result}")
+    print("No numbers were entered.") 
+finally:  #Executes if an exception occured or not. 
+   print("Always executes")
+
+
 
