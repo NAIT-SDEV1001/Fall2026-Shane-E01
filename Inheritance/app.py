@@ -1,9 +1,9 @@
-from animals import Animal,Dog
+from animals import Animal,Dog, Cat, Bird
 
 def main():
     dog = Dog("Boots","Black and White",4,"Schnoodle")
-    cat = Animal("Meow","White",4)
-    bird = Animal("Tweety","Green",2)
+    cat = Cat("Meow","White",4,"solid",10)
+    bird = Bird("Tweety","Green",2,20)
 
     #create a list of the animals
     animals = [dog, cat, bird]
@@ -20,6 +20,8 @@ def main():
         #if animal variable is holding a Dog object
         if isinstance(animal,Dog):
             animal.chase_car()
+        if isinstance(animal,Cat):
+            animal.knock_things_off_ledge()
 
 if __name__ == "__main__":
     main()
